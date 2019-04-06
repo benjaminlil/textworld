@@ -12,6 +12,7 @@ var harYxa = false
 
 func main() {
 	fmt.Printf("a) svenska")
+	fmt.Printf(" ")
 	fmt.Printf("b) English")
 	fmt.Println()
 
