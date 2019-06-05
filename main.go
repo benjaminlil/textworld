@@ -44,12 +44,12 @@ func showTitle(swedishTitle string, englishTitle string) {
 func utanförHuset() {
 	showMessage("Hello\nHello again\n", "hej\nhej igen\n")
 
-	showTitle("Utanför huset", "Outside the house")
+	showTitle("Utanför huset\n", "Outside the house\n")
 
-	fmt.Println("Du står utanför ett grönt mögligt hus.")
-	fmt.Println("Vad gör du?")
-	fmt.Println("a) Går in")
-	fmt.Println("b) Går runt huset och kollar")
+	showMessage(
+		"Du står utanför ett grönt mögligt hus.\nVad gör du?\na) Går in\nb) Går runt huset och kollar\n",
+		"TODO - ENGLISH! Du står utanför ett grönt mögligt hus.\nVad gör du?\na) Går in\nb) Går runt huset och kollar\n",
+	)
 
 	var svar string
 	fmt.Scanln(&svar)
