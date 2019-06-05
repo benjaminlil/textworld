@@ -35,13 +35,16 @@ func showMessage(swedishMessage string, englishMessage string) {
 		fmt.Printf(englishMessage)
 	}
 }
+func showTitle(swedishTitle string, englishTitle string) {
+	fmt.Println()
+	showMessage(swedishTitle, englishTitle)
+	fmt.Println("_______________")
+	fmt.Println()
+}
 func utanförHuset() {
 	showMessage("Hello\nHello again\n", "hej\nhej igen\n")
 
-	fmt.Println()
-	fmt.Println("Utanför huset")
-	fmt.Println("_______________")
-	fmt.Println()
+	showTitle("Utanför huset", "Outside the house")
 
 	fmt.Println("Du står utanför ett grönt mögligt hus.")
 	fmt.Println("Vad gör du?")
