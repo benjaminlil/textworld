@@ -48,8 +48,6 @@ func showTitle(swedishTitle string, englishTitle string) {
 	fmt.Println()
 }
 func utanförHuset() {
-	showMessage("Hello\nHello again\n", "hej\nhej igen\n")
-
 	showTitle("Utanför huset\n", "Outside the house\n")
 
 	svar := showMessageAndPromptUser(
