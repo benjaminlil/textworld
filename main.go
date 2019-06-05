@@ -28,17 +28,15 @@ func main() {
 	utanförHuset()
 }
 
-func utanförHuset() {
-	messages := []string{"Hello\nHello again\n", "hej\nhej igen"}
-
-	var message string
+func showMessage(swedishMessage string, englishMessage string) {
 	if swedish {
-		message = messages[1]
+		fmt.Printf(swedishMessage)
 	} else {
-		message = messages[0]
+		fmt.Printf(englishMessage)
 	}
-
-	fmt.Printf(message)
+}
+func utanförHuset() {
+	showMessage("Hello\nHello again\n", "hej\nhej igen\n")
 
 	fmt.Println()
 	fmt.Println("Utanför huset")
