@@ -35,6 +35,12 @@ func showMessage(swedishMessage string, englishMessage string) {
 		fmt.Printf(englishMessage)
 	}
 }
+func showMessageAndPromptUser(swedishMessage string, englishMessage string) string {
+	showMessage(swedishMessage, englishMessage)
+	var svar string
+	fmt.Scanln(&svar)
+	return svar
+}
 func showTitle(swedishTitle string, englishTitle string) {
 	fmt.Println()
 	showMessage(swedishTitle, englishTitle)
@@ -46,13 +52,10 @@ func utanförHuset() {
 
 	showTitle("Utanför huset\n", "Outside the house\n")
 
-	showMessage(
+	svar := showMessageAndPromptUser(
 		"Du står utanför ett grönt mögligt hus.\nVad gör du?\na) Går in\nb) Går runt huset och kollar\n",
-		"TODO - ENGLISH! Du står utanför ett grönt mögligt hus.\nVad gör du?\na) Går in\nb) Går runt huset och kollar\n",
+		"You are standing outside a green, mouldy house.\nWhat do you do?\na) Go in\nb) Look around the outside\n",
 	)
-
-	var svar string
-	fmt.Scanln(&svar)
 
 	if svar == "a" {
 		iHallen()
