@@ -28,30 +28,32 @@ func main() {
 	utanförHuset()
 }
 
-func utanförHuset() {
-	messages := []string{"Hello\nHello again\n", "hej\nhej igen"}
-
-	var message string
+func showMessage(swedishMessage string, englishMessage string) {
 	if swedish {
-		message = messages[1]
+		fmt.Printf(swedishMessage)
 	} else {
-		message = messages[0]
+		fmt.Printf(englishMessage)
 	}
-
-	fmt.Printf(message)
-
-	fmt.Println()
-	fmt.Println("Utanför huset")
-	fmt.Println("_______________")
-	fmt.Println()
-
-	fmt.Println("Du står utanför ett grönt mögligt hus.")
-	fmt.Println("Vad gör du?")
-	fmt.Println("a) Går in")
-	fmt.Println("b) Går runt huset och kollar")
-
+}
+func showMessageAndPromptUser(swedishMessage string, englishMessage string) string {
+	showMessage(swedishMessage, englishMessage)
 	var svar string
 	fmt.Scanln(&svar)
+	return svar
+}
+func showTitle(swedishTitle string, englishTitle string) {
+	fmt.Println()
+	showMessage(swedishTitle, englishTitle)
+	fmt.Println("_______________")
+	fmt.Println()
+}
+func utanförHuset() {
+	showTitle("Utanför huset\n", "Outside the house\n")
+
+	svar := showMessageAndPromptUser(
+		"Du står utanför ett grönt mögligt hus.\nVad gör du?\na) Går in\nb) Går runt huset och kollar\n",
+		"You are standing outside a green, mouldy house.\nWhat do you do?\na) Go in\nb) Look around the outside\n",
+	)
 
 	if svar == "a" {
 		iHallen()
